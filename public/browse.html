@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="/stylesheets/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="grey darken-4">
+      <div class="container">
+
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo" style="">KAMRA</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Be a Lender</a></li>
+            <li><a href="#">Insurance Policy</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo" background-color="#ffffff">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Be a Lender</a></li>
+            <li><a href="#">Insurance Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </nav>
+  </div>
+
+
+  <div class="container">
+
+
+  </div>
+
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="/javascripts/materialize.min.js"></script>
+  <script>
+    function ajaxSearch() {
+      var params = document.URL.substring(document.URL.indexOf('?') + 3).split('+');
+      //console.log(params);
+      $.post(
+        "/search", {
+          "body": params
+        },
+        function(data) {
+          
+        }
+      );
+    }
+
+    $(document).ready(function() {
+      ajaxSearch();
+    })
+  </script>
+
+
+</body>
+
+
+</html>
